@@ -6,6 +6,9 @@ tags:
   - data-science
 createTime: 2025/02/13 11:46:31
 permalink: /article/wnhrhcl3/
+cover:
+  url: /images/taiwan_1.jpg
+  layout: left
 ---
 
 

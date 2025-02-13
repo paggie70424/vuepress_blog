@@ -37,13 +37,18 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/basic/#profile
    */
   profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
-    name: 'My Vuepress Site',
+    avatar: '/images/paggie_img_2.png',
+    name: 'Paggie Blog',
     description: 'Paggie&#x27;s VuePress Blog ',
-    // circle: true,
+    circle: true,
     // location: '',
     // organization: '',
+    location: 'Adelaide, South Australia',
+    organization: 'Future Education in Unisa',
+    layout: 'right'
   },
+
+// })
 
   navbar,
   notes,

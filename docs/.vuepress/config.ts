@@ -3,7 +3,11 @@ import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 
 export default defineUserConfig({
-  base: '/',
+  // base: '/',
+  // base:'/vuepress_blog/',
+
+  base: process.env.NODE_ENV === 'production' ? '/vuepress_blog/' : '/',
+
   lang: 'en-US',
   title: 'Paggie Vuepress Blog',
   description: 'Paggie&#x27;s VuePress Blog ',
