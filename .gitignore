@@ -6,3 +6,6 @@ docs/.vuepress/dist
 
 .DS_Store
 *.log
+
+dist/
+.env
