@@ -6,7 +6,7 @@ export default defineUserConfig({
   // base: '/',
   // base:'/vuepress_blog/',
 
-  base: process.env.NODE_ENV === 'production' ? '/vuepress_blog/blog/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/vuepress_blog/vuepress_blog/blog/' : '/',
 
   lang: 'en-US',
   title: 'Paggie Vuepress Blog',
