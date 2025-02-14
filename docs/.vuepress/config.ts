@@ -4,9 +4,10 @@ import { plumeTheme } from 'vuepress-theme-plume'
 
 export default defineUserConfig({
   // base: '/',
-  //base:'/vuepress_blog/',
-
+  // base:'/vuepress_blog/',
   base: process.env.NODE_ENV === 'development' ? '/' : '/vuepress_blog/',
+
+  // base: process.env.NODE_ENV === 'production' ? '/vuepress_blog/' : '/',
 
   lang: 'en-US',
   title: 'Paggie Vuepress Blog',
