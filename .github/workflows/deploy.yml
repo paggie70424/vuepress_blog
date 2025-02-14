@@ -32,8 +32,6 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |
           npm run docs:build
-          # Explicitly create the .nojekyll file in the build directory
-          touch src/.vuepress/dist/.nojekyll
 
       - name: Deploy Docs
         uses: JamesIves/github-pages-deploy-action@v4
