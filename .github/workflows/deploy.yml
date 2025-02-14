@@ -1,9 +1,10 @@
+
 name: Deploy Docs
 
 on:
   push:
     branches:
-      - gh-pages
+      - main
 
 permissions:
   contents: write
@@ -32,15 +33,65 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |
           npm run docs:build
-          # Create .nojekyll file to bypass Jekyll processing in GitHub Pages
-          touch src/.vuepress/dist/.nojekyll
 
+      - name: Create .nojekyll
+        run: |
+          touch ./docs/.vuepress/dist/.nojekyll
+      
       - name: Deploy Docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: src/.vuepress/dist
+          branch: gh-pages  # This ensures the deployment happens on the gh-pages branch
+          folder: docs/.vuepress/dist
 
+
+#####verison 2 successfuly twice
+# name: Deploy Docs
+
+# on:
+#   push:
+#     branches:
+#       - gh-pages
+
+# permissions:
+#   contents: write
+
+# jobs:
+#   deploy-gh-pages:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#           cache: 'npm'
+
+#       - name: Install Deps
+#         run: |
+#           npm install --frozen-lockfile
+
+#       - name: Build Docs
+#         env:
+#           NODE_OPTIONS: --max_old_space_size=8192
+#         run: |
+#           npm run docs:build
+#           # Create .nojekyll file to bypass Jekyll processing in GitHub Pages
+#           touch src/.vuepress/dist/.nojekyll
+
+#       - name: Deploy Docs
+#         uses: JamesIves/github-pages-deploy-action@v4
+#         with:
+#           branch: gh-pages
+#           folder: src/.vuepress/dist
+
+
+
+######Version 1 
           # name: Deploy Docs
 
 # on:
