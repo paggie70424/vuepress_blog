@@ -3,10 +3,10 @@ name: Deploy Docs
 on:
   push:
     branches:
-      - main
-      
+      - main  # or the branch you want to deploy from
+
 permissions:
-  contents: write
+  contents: write  # Allows writing to the GitHub repository
 
 jobs:
   deploy-gh-pages:
@@ -15,12 +15,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # To ensure that the entire history is fetched
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'npm'
 
       - name: Install Deps
@@ -32,10 +32,58 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |
           npm run docs:build
-          > src/.vuepress/dist/.nojekyll
+          # Explicitly create the .nojekyll file in the build directory
+          touch src/.vuepress/dist/.nojekyll
 
       - name: Deploy Docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: src/.vuepress/dist
+          branch: gh-pages        # Deployment to the gh-pages branch
+          folder: src/.vuepress/dist  # Pointing to the correct build output folder
+
+
+
+
+
+
+# name: Deploy Docs
+
+# on:
+#   push:
+#     branches:
+#       - main
+      
+# permissions:
+#   contents: write
+
+# jobs:
+#   deploy-gh-pages:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#           cache: 'npm'
+
+#       - name: Install Deps
+#         run: |
+#           npm install --frozen-lockfile
+
+#       - name: Build Docs
+#         env:
+#           NODE_OPTIONS: --max_old_space_size=8192
+#         run: |
+#           npm run docs:build
+#           > src/.vuepress/dist/.nojekyll
+
+#       - name: Deploy Docs
+#         uses: JamesIves/github-pages-deploy-action@v4
+#         with:
+#           branch: gh-pages
+#           folder: src/.vuepress/dist
