@@ -7,7 +7,7 @@ createTime: 2025/02/13 10:52:18
 permalink: /article/unfh609m/
 cover:
   url: /images/taiwan_2.jpg
-  layout: left
+  layout: right
 ---
 
 ## Heading 2

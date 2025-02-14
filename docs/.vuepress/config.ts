@@ -18,10 +18,22 @@ export default defineUserConfig({
   // ],
 
   head: [
+    [
+      "style",
+      {},
+      `
+        body {
+          background: url('/images/git_img_4.png') no-repeat center center fixed;
+          background-size: cover;
+          opacity: 0.9;
+        }
+      `,
+    ],
     // Configure site icon (favicon) with a local image
     ['link', { rel: 'icon', type: 'image/png', href: '/images/background.jpg' }],
   ],
   
+
   bundler: viteBundler(),
   shouldPrefetch: false, // 站点较大，页面数量较多时，不建议启用
 
@@ -37,24 +49,11 @@ export default defineUserConfig({
     },
     // 社交链接
     social: [
-      { icon: 'github', link: 'https://github.com/vuepress-theme-plume' },
+      { icon: 'github', link: 'https://paggie70424.github.io/vuepress_blog/' },
       // ... more
  ],
   // })
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */

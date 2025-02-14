@@ -7,7 +7,7 @@ config:
     full: true
     background: tint-plate
     hero:
-      name: Theme Plume
+      name: Paggie VuePress Blog Theme Plume
       tagline: VuePress Next Theme
       text: A simple, feature-rich, document & blog
       actions:
